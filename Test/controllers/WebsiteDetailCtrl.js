@@ -6,6 +6,9 @@ var click;
     var WebsiteDetailCtrl = (function () {
         function WebsiteDetailCtrl(data) {
         }
+        WebsiteDetailCtrl.prototype.injection = function () {
+            return ["$scope", WebsiteDetailCtrl];
+        };
         return WebsiteDetailCtrl;
     })();
     click.WebsiteDetailCtrl = WebsiteDetailCtrl;

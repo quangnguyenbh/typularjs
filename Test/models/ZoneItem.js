@@ -4,13 +4,6 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var Item = (function () {
-    function Item(id) {
-        this.id = id;
-    }
-    return Item;
-})();
-
 // Module
 var click;
 (function (click) {
@@ -21,7 +14,7 @@ var click;
             _super.apply(this, arguments);
         }
         return ZoneItem;
-    })(Item);
+    })(click.Item);
     click.ZoneItem = ZoneItem;
 })(click || (click = {}));
 //# sourceMappingURL=ZoneItem.js.map

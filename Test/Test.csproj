@@ -16,12 +16,22 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
+    <Content Include="app.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <TypeScriptCompile Include="controllers\WebsiteListCtrl.ts" />
     <TypeScriptCompile Include="controllers\WebsiteDetailCtrl.ts" />
     <TypeScriptCompile Include="controllers\CreateWebsiteCtrl.ts" />
-    <Content Include="createwebsite.html" />
-    <Content Include="default.htm" />
+    <TypeScriptCompile Include="controllers\MainController.ts" />
+    <Content Include="welcome.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="createwebsite.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="default.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <TypeScriptCompile Include="interfaces\IWebsiteScope.ts" />
     <Content Include="layout\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="layout\bootstrap\css\bootstrap-responsive.min.css" />
@@ -39,7 +49,6 @@
     <Content Include="layout\css\ie.css" />
     <Content Include="layout\css\style.css" />
     <Content Include="layout\css\tamarillo.css" />
-    <Content Include="layout\dashboard.html" />
     <Content Include="layout\file-manager\js\browser\0bject.js" />
     <Content Include="layout\file-manager\js\browser\clipboard.js" />
     <Content Include="layout\file-manager\js\browser\dropUpload.js" />
@@ -1530,15 +1539,27 @@
     <Content Include="layout\lib\validation\version.txt" />
     <Content Include="libs\angular-1.0.d.ts" />
     <Content Include="libs\angular\angular.min.js" />
-    <Content Include="listWebsites.html" />
-    <TypeScriptCompile Include="models\WebsiteItem.ts" />
-    <TypeScriptCompile Include="models\ZoneItem.ts" />
-    <TypeScriptCompile Include="models\ZoneGroupItem.ts" />
-    <TypeScriptCompile Include="services\DataService.ts" />
+    <Content Include="listWebsites.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <TypeScriptCompile Include="models\WebsiteItem.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="models\ZoneItem.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="models\ZoneGroupItem.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="services\DataService.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="app.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="layout\file-manager\browse.php" />
@@ -1658,6 +1679,7 @@
     <Folder Include="layout\file-manager\upload\image\" />
     <Folder Include="layout\lib\plupload\examples\uploads\" />
     <Folder Include="layout\video\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -1674,7 +1696,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>17636</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:36074/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -6,14 +6,24 @@ var __extends = this.__extends || function (d, b) {
 };
 var click;
 (function (click) {
+    var Item = (function () {
+        function Item(id) {
+            this.id = id;
+        }
+        return Item;
+    })();
+    click.Item = Item;
+
     var WebsiteItem = (function (_super) {
         __extends(WebsiteItem, _super);
-        function WebsiteItem(id, url, reviewType, usage, owner) {
+        function WebsiteItem(id, url, reviewType, usage, owner, name, des) {
             _super.call(this, id);
             this.URL = url;
+            this.name = name;
             this.reviewType = reviewType;
             this.usage = usage;
             this.owner = owner;
+            this.description = des;
         }
         return WebsiteItem;
     })(Item);
