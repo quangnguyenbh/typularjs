@@ -5,8 +5,12 @@ module click {
     export class WebsiteDetailCtrl {
         private website: WebsiteItem;
 
-        constructor(data: IDataService<WebsiteItem>) {
+        constructor(data: IDataService<click.WebsiteItem>) {
 
+        }
+
+        public injection(): any[]{
+            return ["$scope",WebsiteDetailCtrl];
         }
     }
 

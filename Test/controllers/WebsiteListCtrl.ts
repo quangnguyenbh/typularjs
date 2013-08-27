@@ -5,17 +5,21 @@
 module click {
     export class WebsiteListCtrl {
         private websites: WebsiteItem[];
-        
+        message: string = "Hello controller ";
         constructor(
-            data: IDataService<WebsiteItem>,
+            data: IDataService<click.WebsiteItem>,
             $scope : IWebsiteScope
         ) {
-            this.websites = data.listAll().list ;
+            this.websites = data.listAll().lists;            
             $scope.websites = this.websites;
+            $scope.vm = this;  
+            $scope.message = "Hello moto" ;          
+            console.log("abc"); 
         }
         public injection(): any[] {
             return [   
-                '$scope',
+                "$scope",
+                "$routeParams",
                 WebsiteListCtrl
             ]
         } 

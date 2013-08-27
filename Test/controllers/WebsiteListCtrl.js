@@ -5,12 +5,17 @@ var click;
 (function (click) {
     var WebsiteListCtrl = (function () {
         function WebsiteListCtrl(data, $scope) {
-            this.websites = data.listAll().list;
+            this.message = "Hello controller ";
+            this.websites = data.listAll().lists;
             $scope.websites = this.websites;
+            $scope.vm = this;
+            $scope.message = "Hello moto";
+            console.log("abc");
         }
         WebsiteListCtrl.prototype.injection = function () {
             return [
-                '$scope',
+                "$scope",
+                "$routeParams",
                 WebsiteListCtrl
             ];
         };

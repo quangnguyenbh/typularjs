@@ -12,7 +12,7 @@ var click;
             _super.apply(this, arguments);
         }
         return ZoneGroupItem;
-    })(Item);
+    })(click.Item);
     click.ZoneGroupItem = ZoneGroupItem;
 })(click || (click = {}));
 //# sourceMappingURL=ZoneGroupItem.js.map

@@ -23,9 +23,9 @@ var click;
 
         ClientDataService.prototype.list = function (from, count) {
             return {
-                list: [
-                    new click.WebsiteItem(1, "baomoi.com", 1, 0.3, "chinhnc"),
-                    new click.WebsiteItem(2, "zing.vn", 1, 0.3, "chinhnc")
+                lists: [
+                    new click.WebsiteItem(1, "baomoi.com", 1, 0.3, "chinhnc", "baomoi", "baomoi'des"),
+                    new click.WebsiteItem(2, "zing.vn", 1, 0.3, "chinhnc", "zing", "zing des")
                 ],
                 total: 2
             };
@@ -33,11 +33,8 @@ var click;
 
         ClientDataService.prototype.listAll = function () {
             return {
-                list: [
-                    new click.WebsiteItem(1, "baomoi.com", 1, 0.3, "chinhnc"),
-                    new click.WebsiteItem(2, "zing.vn", 1, 0.3, "chinhnc")
-                ],
-                total: 2
+                lists: this._items,
+                total: this._items.length
             };
         };
         return ClientDataService;

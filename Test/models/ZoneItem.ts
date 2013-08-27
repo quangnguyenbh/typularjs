@@ -1,15 +1,9 @@
 
-class Item {
-    public id: number;
-    constructor(id: number) {
-        this.id = id;        
-    }
-}
 // Module
 module click {
     
     // Class
-    export class ZoneItem extends Item {
+    export class ZoneItem extends click.Item {
         public name: string;
         public category: number[];
         public type: number[];
