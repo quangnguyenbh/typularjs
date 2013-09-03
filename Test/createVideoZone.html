@@ -1,0 +1,217 @@
+<div class="row-fluid">
+    <div class="span10">
+        <form class="form-horizontal well" name="videoZone" ng-submit="addZone()">
+            <fieldset>
+                <p class="f_legend">Create Video Zone</p>
+                <div class="control-group" ng-class="">
+                    <label class="control-label">Name</label>
+                    <div class="controls">
+                        <input type="text" class="span6" name="zoneName" ng-model="zone.name" required>
+                        <span ng-show="videoZone.name.$error.required" class="help-inline">Required</span>
+                        <span class="help-block">Name of zone, ...</span>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="">
+                    <label class="control-label">Categories</label>
+                    <div class="controls">
+                        <div class="span6">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="zone.cat.music">
+                                Music
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="zone.cat.entertainment">
+                                Entertainment
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="zone.cat.beauty">
+                                Beauty and Spa
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="">
+                    <label class="control-label">Item type</label>
+                    <div class="controls">
+                        <div class="span6">
+                            <label class="checkbox">
+                                <input type="radio" ng-model="zone.itemType" value="banner">
+                                Banner
+                            </label>
+                            <label class="checkbox">
+                                <input type="radio" ng-model="zone.itemType" value="tvc">
+                                TVC
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="zone.itemType == 'banner'">
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Item Size</label>
+                        <div class="controls">
+                            <div>
+                                <select class="span6" name="size" ng-model="zone.size">
+                                    <option>980x180</option>
+                                    <option>480x160</option>
+                                    <option>480x320</option>
+                                </select>
+                            </div>
+                            <span ng-show="videoZone.size.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Display time</label>
+                        <div class="controls">
+                            <div>
+                                <select class="span6" name="size" ng-model="zone.displayTime">
+                                    <option value="1">After content video start 10s</option>
+                                    <option value="2">After content video start 15s</option>
+                                    <option value="3">After content video start 20s</option>
+                                    <option value="4">After content video start 30s</option>
+                                </select>
+                            </div>
+                            <span ng-show="videoZone.displayTime.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Allow running mode</label>
+                        <div class="controls">
+                            <div class="span6">
+                                <label class="checkbox">
+                                    <input type="checkbox" ng-model="zone.mode.network">
+                                    Network
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" ng-model="zone.mode.booking">
+                                    Booking
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" ng-model="zone.mode.bandn">
+                                    Booking and network
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Ads position</label>
+                        <div class="controls">
+                            <div class="span6">
+                                <label class="checkbox">
+                                    <input type="checkbox" ng-model="zone.position.top">
+                                    top
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" ng-model="zone.position.bottom">
+                                    bottom
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Max ads duration (s)</label>
+                        <div class="controls">
+                            <input type="text" name="maxAdsDuration" class="span6" ng-model="zone.maxAdsDuration" required>
+                            <span ng-show="videoZone.maxAdsDuration.$error.required" class="help-inline">Required</span>
+                        </div>
+                        
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Max Group Ads duration (s)</label>
+                        <div class="controls">
+                            <input type="text" name="maxGroupAdsDuration" class="span6" ng-model="zone.maxGroupAdsDuration" required>
+                            <span ng-show="videoZone.maxGroupAdsDuration.$error.required" class="help-inline">Required</span>
+                        </div>
+                        
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Minimum CPC Price</label>
+                        <div class="controls">
+                            <input type="text" class="span6" name="minCPC" ng-model="zone.minCPCPrice" required>
+                            <span ng-class="{error : videoZone.minCPC.$invalid}" ng-show="videoZone.minCPC.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Minimum CPM Price</label>
+                        <div class="controls">
+                            <input type="text" class="span6" name="minCPM" ng-model="zone.minCPMPrice" required>
+                            <span ng-show="videoZone.minCPM.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="zone.itemType == 'tvc'">
+                    <div class="control-group">
+                        <label class="control-label">Ads postion</label>
+                        <div class="controls">
+                            <div>
+                                <select class="span6" name="adsPosition" ng-model="zone.adsPosition">
+                                    <option value="1">Pre-roll</option>
+                                    <option value="2">Post-roll</option>
+                                </select>
+                                <span ng-show="videoZone.adsPosition.$error.required" class="help-inline">Required</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Max Ads Duration</label>
+                        <div class="controls">
+                            <input type="text" name="maxAdsDuration" class="span6" ng-model="zone.maxAdsDuration" required>
+                            <span ng-show="videoZone.maxAdsDuration.$error.required" class="help-inline">Required</span>
+                        </div>
+                        
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Max Group Ads Duration</label>
+                        <div class="controls">
+                            <input type="text" name="maxGroupAdsDuration" class="span6" ng-model="zone.maxGroupAdsDuration" required>
+                            <span ng-show="videoZone.maxGroupAdsDuration.$error.required" class="help-inline">Required</span>
+                        </div>
+                        
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Minimum CPM Price</label>
+                        <div class="controls">
+                            <input type="text" class="span6" name="minCPM" ng-model="zone.minCPMPrice" required>
+                            <span ng-show="videoZone.minCPM.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Minimum 1/4 Price</label>
+                        <div class="controls">
+                            <input type="text" class="span6" name="min14CPM" ng-model="zone.min14Price" required>
+                            <span ng-show="videoZone.min14CPM.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Minimum 1/2 Price</label>
+                        <div class="controls">
+                            <input type="text" class="span6" name="min12CPM" ng-model="zone.min12Price" required>
+                            <span ng-show="videoZone.min12CPM.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Minimum 3/4 Price</label>
+                        <div class="controls">
+                            <input type="text" class="span6" name="min34CPM" ng-model="zone.min34Price" required>
+                            <span ng-show="videoZone.min34CPM.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                    <div class="control-group" ng-class="">
+                        <label class="control-label">Minimum Full Price</label>
+                        <div class="controls">
+                            <input type="text" class="span6" name="minFullCPM" ng-model="zone.minFullPrice"  required>
+                            <span ng-show="videoZone.minFullCPM.$error.required" class="help-inline">Required</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button ng-click="addZone()" ng-disabled="isClean() || videoZone.zoneName.$invalid" class="btn">Save</button>
+                        <a href="#/website/{{curWebsite}}" class="btn">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

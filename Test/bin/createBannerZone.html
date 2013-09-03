@@ -1,0 +1,111 @@
+<div class="row-fluid">
+    <div class="span10">
+        <form class="form-horizontal well">
+            <fieldset>
+                <p class="f_legend">Create Banner Zone</p>
+                <div class="control-group" ng-class="{error : myForm.name.$invalid}">
+                    <label class="control-label">Name</label>
+                    <div class="controls">
+                        <input type="text" class="span10" ng-model="zone.name" required>
+                        <span class="help-block">Name of zone, ...</span>
+                        <span ng-show="myForm.name.$error.required" class="help-inline">Required</span>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error : myForm.owner.$invalid}">
+                    <label class="control-label">Categories</label>
+                    <div class="controls">
+                        <div class="span6">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="cat.music">
+                                Music
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="cat.entertainment">
+                                Entertainment
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="cat.beauty">
+                                Beauty and Spa
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error : myForm.owner.$invalid}">
+                    <label class="control-label">Allow running mode</label>
+                    <div class="controls">
+                        <div class="span6">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="mode.network">
+                                Network
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="mode.booking">
+                                Booking
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="mode.bandn">
+                                Booking and network
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error : myForm.owner.$invalid}">
+                    <label class="control-label">Size</label>
+                    <div class="controls">
+                        <div>
+                            <select class="span10" ng-model="zone.size">
+                                <option>980x90</option>
+                                <option>490x90</option>
+                                <option>490x45</option>
+                                <option>480x320</option>
+                            </select>
+                        </div>
+                        <span ng-show="myForm.owner.$error.required" class="help-inline">Required</span>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error : myForm.owner.$invalid}">
+                    <label class="control-label">Type</label>
+                    <div class="controls">
+                        <div>
+                            <select class="span10" ng-model="zone.type">
+                                <option>Fixed zone</option>
+                                <option>Flexible zone</option>
+                            </select>
+                        </div>
+                        <span ng-show="myForm.owner.$error.required" class="help-inline">Required</span>
+                    </div>
+                </div>    
+                <div class="control-group" ng-class="{error : myForm.url.$invalid}">
+                    <label class="control-label">Default ads</label>
+                    <div class="controls">
+                        <input type="text" class="span10" ng-model="zone.defaultAds" required>
+                    </div>
+                    <span ng-show="myForm.url.$error.required" class="help-inline">Required</span>
+                </div>
+                <div class="control-group" ng-class="{error : myForm.des.$invalid}">
+                    <label class="control-label">Minimum CPC Price</label>
+                    <div class="controls">
+                        <input type="text" class="span10" ng-model="zone.minCPCPrice" required>
+                        <span class="help-block">Website's description</span>
+                        <span ng-show="myForm.des.$error.required" class="help-inline">Required</span>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error : myForm.des.$invalid}">
+                    <label class="control-label">Minimum CPM Price</label>
+                    <div class="controls">
+                        <input type="text" class="span10" ng-model="zone.minCPMPrice" required>
+                        <span class="help-block"></span>
+                        <span ng-show="myForm.des.$error.required" class="help-inline">Required</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button ng-click ="addZone()" ng-disabled="isClean() || myForm.$invalid" class="btn">Save</button>
+                        <a href="#/website/{{curWebsite}}" class="btn">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

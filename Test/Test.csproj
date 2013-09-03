@@ -23,6 +23,21 @@
     <TypeScriptCompile Include="controllers\WebsiteDetailCtrl.ts" />
     <TypeScriptCompile Include="controllers\CreateWebsiteCtrl.ts" />
     <TypeScriptCompile Include="controllers\MainController.ts" />
+    <TypeScriptCompile Include="controllers\ZoneController.ts" />
+    <TypeScriptCompile Include="controllers\CreateZoneCtrl.ts" />
+    <Content Include="createZoneGroup.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="createVideoZone.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="createBannerZone.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libs\angular\angular-ui-router.js" />
+    <Content Include="websiteDetail.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="welcome.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1680,6 +1695,7 @@
     <Folder Include="layout\lib\plupload\examples\uploads\" />
     <Folder Include="layout\video\" />
     <Folder Include="Properties\" />
+    <Folder Include="templates\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

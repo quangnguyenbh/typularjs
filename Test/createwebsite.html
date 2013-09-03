@@ -1,63 +1,75 @@
 <div class="row-fluid">
-            <div class="span6">
-                <form class="form-horizontal well">
-                    <fieldset>
-                        <p class="f_legend">Create website</p>
-                        <div class="control-group" ng-class="{error : myForm.name.$invalid}">
-                            <label class="control-label">Name</label>
-                            <div class="controls">
-                                <input type="text" class="span10" ng-model="website.name" required>
-                                <span class="help-block">Name of this website, ...</span>
-                                <span ng-show="myForm.name.$error.required" class="help-inline">Required</span>
-                            </div>
-                        </div>
-                        <div class="control-group" ng-class="{error : myForm.owner.$invalid}">
-                            <label class="control-label">Owner</label>
-                            <div class="controls">
-                                <div>
-                                    <select class="span10" ng-model="website.owner">
-                                        <option>chinhnc</option>
-                                        <option>phuongdm</option>
-                                    </select>
-                                </div>
-                                <span ng-show="myForm.owner.$error.required" class="help-inline">
-Required</span>
-                            </div>
-                        </div>
-                        <div class="control-group" >
-                            <label class="control-label">Review type</label>
-                            <div class="controls">
-                                <div>
-                                    <select class="span10" ng-model="website.reviewType">
-                                        <option>review</option>
-                                        <option>owner</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="control-group" ng-class="{error : myForm.url.$invalid}">
-                            <label class="control-label">Home URL</label>
-                            <div class="controls">
-                                <input type="text" class="span10" ng-model="website.URL" required>
-                            </div>
-                            <span ng-show="myForm.url.$error.required" class="help-inline">Required</span>
-                        </div>
-                        <div class="control-group" ng-class="{error : myForm.des.$invalid}">
-                            <label class="control-label">Description</label>
-                            <div class="controls">
-                                <textarea class="span10" rows="5" cols="30" ng-model="website.description"></textarea>
-                                <span class="help-block">Website's description</span>
-                                <span ng-show="myForm.des.$error.required" class="help-inline">Required</span>
-                            </div>
+    <div class="span10">
+        <form name="myForm" class="form-horizontal well" novalidate ng-submit="addWebsite()">
+            <fieldset>
+                <p class="f_legend">Create website</p>
+                <div class="control-group">
+                    <label class="control-label">Name</label>
+                    <div class="controls">
+                        <input type="text" class="span6" name="wname" ng-model="website.name" required>
+                        <span ng-show="myForm.wname.$error.required && !myForm.wname.$pristine" class="help-inline" ng-class="{error : myForm.wname.$invalid}">This field is required!</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Owner</label>
+                    <div class="controls">
+                        <div>
+                            <select class="span6" name="owner" ng-model="website.owner" required>
+                                <option>chinhnc</option>
+                                <option>phuongdm</option>
+                            </select>
+                            <span ng-show="myForm.owner.$error.required && !myForm.owner.$pristine" class="help-inline">Required</span>
                         </div>
 
-                        <div class="control-group">
-                            <div class="controls">
-                                <button ng-click ="addWebsite()" ng-disabled="isClean() || myForm.$invalid" class="btn">Submit</button>
-                                <a href="#/" class="btn">Cancel</a>
-                            </div>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="">
+                    <label class="control-label">Email</label>
+                    <div class="controls">
+                        <input type="email" name="uEmail" class="span6" ng-model="website.email" required>
+                        <span ng-show="myForm.uEmail.$error.required && !myForm.uEmail.$pristine" class="help-inline">This field is required !</span>
+                        <span ng-show="myForm.uEmail.$error.email" class="help-inline">This is not a valid email.</span>
+                        <span class="help-block">Email for contact, ...</span>
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Review type</label>
+                    <div class="controls">
+                        <div>
+                            <select class="span6" ng-model="website.reviewType">
+                                <option>review</option>
+                                <option>owner</option>
+                            </select>
                         </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error : myForm.wurl.$invalid}">
+                    <label class="control-label">Home URL</label>
+                    <div class="controls">
+                        <input type="url" name="wurl" class="span6" ng-model="website.URL" required placeholder="http://example.com">
+                        <span ng-show="myForm.wurl.$error.required && !myForm.wurl.$pristine" class="help-inline">This field is required.</span>
+                        <span ng-show="myForm.wurl.$error.url" class="help-inline">Not a valid url</span>
+                    </div>
+
+                </div>
+                <div class="control-group" >
+                    <label class="control-label">Description</label>
+                    <div class="controls" ng-class="{error : myForm.des.$invalid}">
+                        <textarea name="des" class="span6" rows="5" cols="30" ng-model="website.description" ng-minlength="11" required></textarea>
+                        <span ng-show="myForm.des.$error.required && !myForm.des.$pristine" class="help-inline">Required</span>
+                        <span ng-show="myForm.des.$error.minlength" class="help-inline">Length must be greater than 10 characters</span>
+                        <span class="help-block">Website's description</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" ng-disabled="isClean() || myForm.$invalid" class="btn">Save</button>
+                        <a href="#/" class="btn">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
