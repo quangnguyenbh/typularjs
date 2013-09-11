@@ -1,7 +1,16 @@
-
+/// <reference path="WebsiteItem.ts"/>
 
 module click {
-    export class ZoneGroupItem extends click.Item {
-        public name: string ;
+
+    'use strict';
+
+    export class ZoneGroup extends Item {
+        public name: string;
+        public websiteId: number;
+        public zones: ZoneItem[];
+        constructor() {
+            super();
+        }         
     }
+    
 }

@@ -6,18 +6,25 @@ var __extends = this.__extends || function (d, b) {
 };
 var click;
 (function (click) {
+    'use strict';
+
     var Item = (function () {
-        function Item(id) {
-            this.id = id;
+        function Item() {
         }
         return Item;
     })();
     click.Item = Item;
 
+    //export class WebsiteReviewType extends click.TypeItem {
+    //    constructor(code: number, name: string) {
+    //        super(code, name);
+    //    }
+    //}
     var WebsiteItem = (function (_super) {
         __extends(WebsiteItem, _super);
         function WebsiteItem(id, url, reviewType, usage, owner, name, des) {
-            _super.call(this, id);
+            _super.call(this);
+            this.id = id;
             this.URL = url;
             this.name = name;
             this.reviewType = reviewType;
@@ -26,7 +33,7 @@ var click;
             this.description = des;
         }
         return WebsiteItem;
-    })(Item);
+    })(click.Item);
     click.WebsiteItem = WebsiteItem;
 })(click || (click = {}));
 //# sourceMappingURL=WebsiteItem.js.map

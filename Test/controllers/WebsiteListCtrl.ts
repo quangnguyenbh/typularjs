@@ -9,21 +9,17 @@ module click {
         constructor(
             data: IDataService<click.WebsiteItem>,
             $scope : IWebsiteScope
-        ) {
-            this.websites = data.listAll().lists;            
-            $scope.websites = this.websites;
-            $scope.vm = this;  
-            $scope.message = "Hello moto" ;          
-            console.log("abc"); 
-        }
-        public injection(): any[] {
-            return [   
-                "$scope",
-                "$routeParams",
-                WebsiteListCtrl
-            ]
-        } 
+            ){            
+                this.websites = data.listAll().lists;            
+                $scope.websites = this.websites;
+                $scope.vm = this;  
+                $scope.message = "Hello moto" ;          
+                console.log("websites list controller constructor"); 
+                $scope.onSelect = () => {
+                    console.log($scope.checked);
+                }
 
+        }
     }
 
 }

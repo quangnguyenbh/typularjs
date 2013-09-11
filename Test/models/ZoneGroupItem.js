@@ -1,3 +1,4 @@
+/// <reference path="WebsiteItem.ts"/>
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -6,13 +7,15 @@ var __extends = this.__extends || function (d, b) {
 };
 var click;
 (function (click) {
-    var ZoneGroupItem = (function (_super) {
-        __extends(ZoneGroupItem, _super);
-        function ZoneGroupItem() {
-            _super.apply(this, arguments);
+    'use strict';
+
+    var ZoneGroup = (function (_super) {
+        __extends(ZoneGroup, _super);
+        function ZoneGroup() {
+            _super.call(this);
         }
-        return ZoneGroupItem;
+        return ZoneGroup;
     })(click.Item);
-    click.ZoneGroupItem = ZoneGroupItem;
+    click.ZoneGroup = ZoneGroup;
 })(click || (click = {}));
 //# sourceMappingURL=ZoneGroupItem.js.map

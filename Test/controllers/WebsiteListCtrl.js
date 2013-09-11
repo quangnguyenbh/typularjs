@@ -10,15 +10,11 @@ var click;
             $scope.websites = this.websites;
             $scope.vm = this;
             $scope.message = "Hello moto";
-            console.log("abc");
+            console.log("websites list controller constructor");
+            $scope.onSelect = function () {
+                console.log($scope.checked);
+            };
         }
-        WebsiteListCtrl.prototype.injection = function () {
-            return [
-                "$scope",
-                "$routeParams",
-                WebsiteListCtrl
-            ];
-        };
         return WebsiteListCtrl;
     })();
     click.WebsiteListCtrl = WebsiteListCtrl;

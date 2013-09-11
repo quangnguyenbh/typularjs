@@ -7,12 +7,13 @@ module click {
     export class CreateWebsiteCtrl {
         private website: WebsiteItem;
         private dataService: IDataService<click.WebsiteItem>;
-        private scope: IWebsiteScope;
+        private $scope: IWebsiteScope;
 
         constructor(data: IDataService<click.WebsiteItem> ,$scope : IWebsiteScope, $location, $timeout) {
             this.dataService = data;
-            this.scope = $scope;
-            this.scope.addWebsite = () => this.save($scope,$location,$timeout);
+            this.$scope = $scope;
+            console.log("create website controller constructor");
+            $scope.addWebsite = () => this.save($scope,$location,$timeout);
         }
 
         public injection() {
@@ -20,10 +21,27 @@ module click {
                 "$scope",CreateWebsiteCtrl
             ];
         }
+
         save($scope, $location, $timeout) {
             console.log("create website");
             console.log($scope.website);
+            var id = this.dataService.listAll().total + 1;
+            
+            console.log("id : " + id + ",url:" + $scope.website.URL + ",reviewType:" + $scope.website.reviewType
+                + ", owner :" + $scope.website.owner + ", name:" + $scope.website.name
+                + ", des : " + $scope.website.description);
+            //var a = new click.WebsiteItem(id,
+            //    $scope.website.URL,
+            //    $scope.website.reviewType,
+            //    0.3,
+            //    $scope.website.owner,
+            //    $scope.website.name,
+            //    $scope.website.description);
+            $scope.website.id = id;
+            //console.log(a);
+            //console.log('id = ' + a.id);
             this.dataService.save($scope.website);
+            
             $timeout(function () { $location.path('/websites'); });
         }
     }

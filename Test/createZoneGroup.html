@@ -1,0 +1,47 @@
+<!-- 2col multiselect -->
+ <link rel="stylesheet" href="layout/lib/multiselect/css/multi-select.css" />
+
+<div class="row-fluid">
+            <div class="span10">
+                <form class="form-horizontal well" name="zgroupForm" ng-submit="addZoneGroup()">
+                    <fieldset>
+                        <p class="f_legend">Create Zone Group</p>
+                        <div class="control-group">
+                            <label class="control-label">Name</label>
+                            <div class="controls">
+                                <input type="text" name="name" class="span6" ng-model="zgroup.name" required>
+                                <span ng-show="zgroupForm.name.$error.required" class="help-inline">This field is required</span>
+                                <span class="help-block">Name of zone group, ...</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"> Add zones to this Group</label>
+                            <div class="controls">
+                                <div class="ms-container" id="ms-searchable-form">
+                                    <div class="ms-selectable">
+                                        <input type="text" ng-model="searchText" placeholder="search" autocomplete="off" id="multi_search">
+                                        <ul class="ms-list">
+                                            <li ms-value="PW" class="ms-elem-selectable" style="" ng-repeat="zone in items | filter : searchText" ng-click="selectZone(zone.name)">{{zone.name}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="ms-selection">
+                                        <a class="btn" id="sForm_deselect" ng-click="removeAllSelected()">Deselect All</a>
+                                        <div qu-directive></div>
+                                        <ul class="ms-list">
+                                            <li ms-value="DZ" class="ms-elem-selected" ng-repeat="szone in selectedZones" ng-click="removeSelectedZone(szone.name)">{{szone.name}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button ng-disabled="isClean() || zgroupForm.$invalid" class="btn">Save</button>
+                                <a href="#/website/{{curWebsite}}" class="btn">Cancel</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
