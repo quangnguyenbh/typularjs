@@ -1696,6 +1696,7 @@
     <Folder Include="layout\video\" />
     <Folder Include="Properties\" />
     <Folder Include="templates\" />
+    <Folder Include="zhtml\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

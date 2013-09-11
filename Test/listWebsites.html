@@ -33,11 +33,11 @@
                         <tbody role="alert" aria-live="polite" aria-relevant="all">
                             <tr class="odd" ng-repeat="website in websites" >
                                 <td class=" ">
-                                    <input type="checkbox" class="row_sel" name="row_sel" ng-model="checked" ng-selected="onSelect()"></td>
-                                <td class=" "><a href="#/website/{{website.id}}">{{website.URL}}</a></td>
-                                <td class=" ">{{website.owner}}</td>
-                                <td class=" ">{{website.reviewType}}</td>
-                                <td class=" ">{{website.usage}}</td>
+                                    <input type="checkbox" class="row_sel" name="row_sel" ng-model='checked{{website.id}}' ng-selected="onSelect()"></td>
+                                <td class=""><a href="#/website/{{website.id}}">{{website.URL}}</a></td>
+                                <td class="">{{website.owner}}</td>
+                                <td class="">{{website.reviewType}}</td>
+                                <td class="">{{website.usage}}</td>
                             </tr>
                         </tbody>
                 </table>
